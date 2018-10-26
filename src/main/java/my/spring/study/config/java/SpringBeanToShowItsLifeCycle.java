@@ -33,8 +33,12 @@ public class SpringBeanToShowItsLifeCycle implements InitializingBean, Disposabl
     }
 
     @PostConstruct
-    public void springPostConstruct() {
+    private void springPostConstruct() {
         System.out.println("SpringBeanToShowItsLifeCycle: @PostConstruct");
+    }
+
+    private void customInit() {
+        System.out.println("SpringBeanToShowItsLifeCycle: customInit");
     }
 
     @Override
@@ -57,8 +61,12 @@ public class SpringBeanToShowItsLifeCycle implements InitializingBean, Disposabl
     }
 
     @PreDestroy
-    public void springPreDestroy() {
+    private void springPreDestroy() {
         System.out.println("SpringBeanToShowItsLifeCycle: @PreDestroy");
+    }
+
+    private void customDestroy() {
+        System.out.println("SpringBeanToShowItsLifeCycle: customDestroy");
     }
 
     @Override

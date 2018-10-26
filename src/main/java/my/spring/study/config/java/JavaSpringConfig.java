@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(basePackages = "my.spring.study")
 public class JavaSpringConfig {
-    @Bean(name = "myBeanShowLifeCycle")
+    @Bean(name = "myBeanShowLifeCycle", initMethod = "customInit", destroyMethod = "customDestroy")
     public SpringBeanToShowItsLifeCycle getBean() {
 //        SpringBeanToShowItsLifeCycle springBeanToShowItsLifeCycle = new SpringBeanToShowItsLifeCycle();
         SpringBeanToShowItsLifeCycle springBeanToShowItsLifeCycle = new SpringBeanToShowItsLifeCycle("SpringBeanToShowItsLifeCycle: the class property set by constructor in @Configuration");
